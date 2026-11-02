@@ -1,0 +1,9 @@
+{
+  "name": "cstack-test-ui",
+  "private": true,
+  "type": "module",
+  "description": "Runner for the cstack test-ui skill: drives Lightpanda over CDP with puppeteer-core.",
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

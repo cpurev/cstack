@@ -1,0 +1,16 @@
+{
+  "name": "cstack",
+  "owner": {
+    "name": "Talendary",
+    "email": "dev@talendary.com"
+  },
+  "description": "Personal marketplace for the cstack plugin.",
+  "plugins": [
+    {
+      "name": "cstack",
+      "source": "./",
+      "description": "Lightweight, token-cheap workflow skills: deslop, fix-ci, review, not-ai, its-prod, fix-it, test-ui. One model, no subagents.",
+      "version": "0.7.0"
+    }
+  ]
+}

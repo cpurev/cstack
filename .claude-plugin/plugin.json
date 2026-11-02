@@ -1,0 +1,11 @@
+{
+  "name": "cstack",
+  "version": "0.7.0",
+  "description": "Lightweight, token-cheap workflow skills: deslop, fix-ci, review, not-ai, its-prod, fix-it, test-ui. One model, no subagents.",
+  "author": {
+    "name": "Talendary",
+    "email": "dev@talendary.com"
+  },
+  "license": "MIT",
+  "keywords": ["skills", "code-review", "ci", "cleanup"]
+}
