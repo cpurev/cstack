@@ -1,11 +1,21 @@
 ---
 name: review
 description: Review the current branch's diff for real bugs, CLAUDE.md rule breaks, and missing tests. Read-only. Use for /review, "review my branch", "check this before I open a PR".
+disallowed-tools: Edit Write NotebookEdit
+allowed-tools: Bash(git branch --show-current) Bash(git log *) Bash(git diff *) Bash(git status *) Bash(git merge-base *) Bash(grep *)
 ---
 
 # review
 
 Read-only. Report findings, change nothing.
+
+## Context
+
+```!
+git branch --show-current
+git log --oneline -15
+git status --short
+```
 
 ## Angle
 
@@ -31,7 +41,8 @@ what you skipped.
 ## Steps
 
 1. Diff: `git diff -U5 $(git merge-base HEAD main)` plus uncommitted changes, or the PR,
-   file, or commit the user named.
+   file, or commit the user named. The recent commits above say what the branch set out
+   to do; ignore them if they come from a different repo than the one under review.
 2. Read `CLAUDE.md` once; note the rules that touch the changed files.
 3. Go hunk by hunk with the angle above. Confirm each finding by tracing its one code path.
 
@@ -44,3 +55,5 @@ Most severe first:
 
 No linter-level nits, no "consider maybe". End with one line: "ship it", "ship after
 fixing N", or "needs rework".
+
+Then stop. Don't fix or offer to start fixing; the user picks which findings to fix.

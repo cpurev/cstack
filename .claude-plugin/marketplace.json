@@ -10,7 +10,7 @@
       "name": "cstack",
       "source": "./",
       "description": "Lightweight, token-cheap workflow skills: deslop, fix-ci, review, not-ai, its-prod, fix-it, test-ui. One model, no subagents.",
-      "version": "0.7.0"
+      "version": "0.7.1"
     }
   ]
 }
