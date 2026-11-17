@@ -22,8 +22,14 @@ So every skill is:
 - **Steps and output**: only what isn't obvious, plus a fixed output shape so results are
   consistent run to run.
 
+One exception: `implement`. Building a feature is mostly volume, and volume is where a
+cheaper model earns its keep. So the session model (Opus or Fable) keeps the judgment, which
+means the contract and the review, and it writes small changes itself. Sonnet workers (`agents/implementer.md`)
+write the code. It's still one level deep, with no reviewer swarms.
+
 | Skill | What it does |
 |---|---|
+| `/cstack:implement` | Builds a feature: the session model designs and reviews; a Sonnet subagent writes the code (small changes it writes itself) |
 | `/cstack:review` | Read-only branch review that looks at what the diff forgot: other callers, sibling paths, existing prod rows |
 | `/cstack:fix-it` | Fixes at the origin, not the symptom; proves correct / robust / upstream / not a band-aid; asks short concrete decisions when blocked |
 | `/cstack:fix-ci` | Gets checks green: is it this branch, first error, test or code wrong, local vs CI difference |
